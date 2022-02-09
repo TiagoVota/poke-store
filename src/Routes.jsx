@@ -7,6 +7,10 @@ import {
 import {
 	Login,
 	SignUp,
+	Home,
+	ProductPage,
+	Cart,
+	Checkout,
 } from './pages/index'
 
 
@@ -14,8 +18,12 @@ const PagesRoutes = () => {
 	return (
 		<Router>
 			<Routes>
-				{/* <Route path='/auth/login' element={<Login />}/> */}
-				{/* <Route path='/auth/sign-up' element={<SignUp />}/> */}
+				<Route path='/login' element={<Login />} />
+				<Route path='/sign-up' element={<SignUp />} />
+				<Route path='/' element={<Home />} />
+				<Route path='/products/:productId' element={<ProductPage />} />
+				<Route path='/cart' element={<Cart />} />
+				<Route path='/checkout' element={<Checkout />} />
 			</Routes>
 		</Router>
 	)
