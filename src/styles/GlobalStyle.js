@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
 	
   html {
-		font-family: 'Raleway', sans-serif;
+		font-family: 'Exo 2', sans-serif;
 		font-style: normal;
 		font-weight: normal;
     background-color: #FFFFFF;
@@ -15,14 +15,14 @@ const GlobalStyle = createGlobalStyle`
 	
 	button, input {
 		border-width: 0px;
-		font-family: 'Raleway', sans-serif;
+		font-family: 'Exo 2', sans-serif;
 		font-style: normal;
 		font-weight: normal;
 	}
 
 	button {
 		color: #FFFFFF;
-		background-color: #A328D6;
+		background-color: #30A7D7;
 		opacity: ${p => p.isDisable ? 0.7 : 1};
 
 		cursor: ${p => p.isDisable ? 'none' : 'pointer'};
@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
 		}
 
 		:focus {
-			color: #8C11BE;
+			color: #30A7D7;
 			outline: none;
 		}
 	}

@@ -20,7 +20,8 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-	
-	background-color: #8C11BE;
 
+	overflow-y: scroll;
+	
+	background-color: #FFFFFF;
 `

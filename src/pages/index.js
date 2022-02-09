@@ -1,8 +1,8 @@
-import Login from './login'
-import SignUp from './signUp'
+// import Login from './login'
+// import SignUp from './signUp'
 
 
 export {
-	Login,
-	SignUp,
+	// Login,
+	// SignUp,
 }
