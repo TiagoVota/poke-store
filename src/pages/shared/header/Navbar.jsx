@@ -35,8 +35,8 @@ const Container = styled.div`
 	justify-content: space-between;
 	align-items: center;
 
-	border-bottom: 2px solid #000;
-	background: radial-gradient(ellipse at center, #3d3d3d 0%, #1e1e1e 57%);
+	border-bottom: 2px solid #000000;
+	background: radial-gradient(ellipse at center, #3D3D3D 0%, #1E1E1E 57%);
 
 	> button {
 		width: 10vh;

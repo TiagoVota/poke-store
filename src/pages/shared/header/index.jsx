@@ -32,7 +32,7 @@ const Container = styled.header`
 `
 
 const TitleContainer = styled.div`
-	width: 100%;
+	width: 100vw;
 	padding: 25px 0 16px;
 `
 
