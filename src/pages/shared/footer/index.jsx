@@ -25,9 +25,11 @@ const Footer = () => {
 export default Footer
 
 
+const footerHeight = '200px'
+
 const Container = styled.footer`
 	width: 100vw;
-	height: 30vh;
+	height: ${footerHeight};
 	padding: 0 10vw;
 
 	display: flex;
@@ -39,7 +41,7 @@ const Container = styled.footer`
 
 const Title = styled.h2`
 	text-shadow: 2px 2px 4px #000000;
-	padding: 0 10px 22px;
+	padding: 15px 10px 22px;
 
 	font-size: 22px;
 	line-height: 28px;

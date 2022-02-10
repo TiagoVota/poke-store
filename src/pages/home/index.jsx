@@ -7,8 +7,9 @@ import pageTitles from '../../utils/pageTitles'
 
 import Container from '../../components/ContainerHome'
 import Header from '../shared/header'
-import Footer from '../shared/footer'
+import FilterContainer from './filterContainer/FilterContainer'
 import PokemonsContainer from './pokemonsContainer'
+import Footer from '../shared/footer'
 
 
 const Home = () => {
@@ -26,6 +27,8 @@ const Home = () => {
 	return (
 		<Container>
 			<Header title={pageTitles['home']} />
+
+			<FilterContainer />
 			
 			<PokemonsContainer pokemonsList={pokemonsList} />
 

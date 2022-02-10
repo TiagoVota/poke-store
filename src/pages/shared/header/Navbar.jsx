@@ -12,7 +12,7 @@ function Navbar() {
 	return (
 		<Container>
 			<NavButton>
-				<IoReorderThree size='40px' />
+				<IoReorderThree size='45px' />
 			</NavButton>
 
 			<ProfileButton>
@@ -27,9 +27,11 @@ function Navbar() {
 export default Navbar
 
 
+const headerHeight = '82px'
+
 const Container = styled.div`
 	width: 100vw;
-	height: 10vh;
+	height: ${headerHeight};
 
 	display: flex;
 	justify-content: space-between;
@@ -39,7 +41,7 @@ const Container = styled.div`
 	background: radial-gradient(ellipse at center, #3D3D3D 0%, #1E1E1E 57%);
 
 	> button {
-		width: 10vh;
+		width: ${headerHeight};
 		height: 100%;
 
 		background-color: #313131;
@@ -58,8 +60,10 @@ const ProfileButton = styled.button`
 	justify-content: center;
 	align-items: center;
 
+	font-size: 16px;
+
 	> img {
-		width: 40px;
+		width: 45px;
 
 		border-radius: 50%;
 	}
