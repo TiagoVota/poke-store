@@ -18,7 +18,7 @@ function Navbar() {
 			<ProfileButton>
 				<img src={image || signUpImg} alt='Profile image' />
 
-				{ Boolean(image) ? '' : 'Login' }
+				{ Boolean(image) ? '' : 'Log in' }
 			</ProfileButton>
 		</Container>
 	)
@@ -52,6 +52,11 @@ const NavButton = styled.button`
 
 const ProfileButton = styled.button`
 	border-left: 2px solid #000000;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	> img {
 		width: 40px;

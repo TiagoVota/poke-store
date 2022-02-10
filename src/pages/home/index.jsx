@@ -8,7 +8,7 @@ import pageTitles from '../../utils/pageTitles'
 import Container from '../../components/ContainerHome'
 import Header from '../shared/header'
 import Footer from '../shared/footer'
-import PokemonsContainer from './PokemonsContainer'
+import PokemonsContainer from './pokemonsContainer'
 
 
 const Home = () => {

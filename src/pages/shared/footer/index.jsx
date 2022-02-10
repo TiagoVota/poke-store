@@ -11,7 +11,7 @@ const Footer = () => {
 			<Title>Poke Store</Title>
 
 			<PageList>
-				<PageItem onClick={() => navigate('/login')}>Login</PageItem>
+				<PageItem onClick={() => navigate('/login')}>Log in</PageItem>
 				<PageItem onClick={() => navigate('/sign-up')}>Sign up</PageItem>
 				<PageItem onClick={() => navigate('/')}>Pokemons</PageItem>
 				<PageItem onClick={() => navigate('/cart')}>Cart</PageItem>
