@@ -1,9 +1,13 @@
-import Container from '../../components/Container'
+import pageTitles from '../../utils/pageTitles'
+
+import Container from '../../components/ContainerHome'
+import Header from '../shared/header'
 
 
 const Home = () => {
 	return (
 		<Container>
+			<Header title={pageTitles['home']} />
 			
 		</Container>
 	)
