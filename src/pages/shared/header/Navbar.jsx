@@ -18,7 +18,7 @@ function Navbar() {
 			<ProfileButton>
 				<img src={image || signUpImg} alt='Profile image' />
 
-				{ Boolean(image) ? '' : 'Entrar' }
+				{ Boolean(image) ? '' : 'Login' }
 			</ProfileButton>
 		</Container>
 	)
