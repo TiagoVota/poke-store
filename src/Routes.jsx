@@ -21,7 +21,7 @@ const PagesRoutes = () => {
 				<Route path='/login' element={<Login />} />
 				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='/' element={<Home />} />
-				<Route path='/products/:productId' element={<ProductPage />} />
+				<Route path='/products/:pokeName' element={<ProductPage />} />
 				<Route path='/cart' element={<Cart />} />
 				<Route path='/checkout' element={<Checkout />} />
 			</Routes>

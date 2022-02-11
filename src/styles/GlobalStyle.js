@@ -10,14 +10,17 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Exo 2', sans-serif;
 		font-style: normal;
 		font-weight: normal;
+		color: #313131;
+
     background-color: #FFFFFF;
   }
 	
 	button, input {
-		border-width: 0px;
 		font-family: 'Exo 2', sans-serif;
 		font-style: normal;
 		font-weight: normal;
+		
+		border-width: 0px;
 	}
 
 	button {
@@ -33,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	input {
-		color: #000000;
+		color: #313131;
 
 		background-color: ${p => p.isDisable ? '#F2F2F2' : '#FFFFFF'};
 
