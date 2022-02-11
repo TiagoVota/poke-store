@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { moneyDisplay } from '../../../helpers/productsHelper'
+import { moneyDisplay, pokeNumberDisplay } from '../../../helpers/productsHelper'
 
 import TypeButton from './TypeButton'
 
@@ -18,7 +18,7 @@ const PokemonItem = ({ pokeInfo }) => {
 			<PokeImg src={image} alt={`${pokemon} image`} />
 
 			<DescriptionBox>
-				<NumberSpan>{`#${number}`}</NumberSpan>
+				<NumberSpan>{pokeNumberDisplay(number)}</NumberSpan>
 				<NameSpan>{pokemon}</NameSpan>
 				
 

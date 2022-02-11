@@ -1,10 +1,9 @@
-const sanitizeUsername = (name) => {
-	const fistName = name.trim().split(' ')[0]
-	return capitalizeString(fistName)
-}
+import { toCapitalizeCase } from '../utils/stringsManipulation'
 
-const capitalizeString = (str) => {
-	return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase()
+
+const sanitizeUsername = (username) => {
+	const fistName = username.trim().split(' ')[0]
+	return toCapitalizeCase(fistName)
 }
 
 

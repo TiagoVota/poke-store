@@ -12,8 +12,8 @@ const getPokemons = () => {
 }
 
 
-const getPokemon = ({ pokemonId }) => {
-	return axios.get(`${PRODUCTS_URL}/${pokemonId}`)
+const getPokemon = ({ pokeName }) => {
+	return axios.get(`${PRODUCTS_URL}/${pokeName}`)
 }
 
 

@@ -7,7 +7,7 @@ import pageTitles from '../../utils/pageTitles'
 
 import Container from '../../components/ContainerHome'
 import Header from '../shared/header'
-import FilterContainer from './filterContainer/FilterContainer'
+import FilterContainer from './filterContainer'
 import PokemonsContainer from './pokemonsContainer'
 import Footer from '../shared/footer'
 
