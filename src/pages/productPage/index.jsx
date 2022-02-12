@@ -29,7 +29,7 @@ const ProductPage = () => {
 		<Container>
 			<Header title={pageTitles['product']} />
 
-			<PokemonContainer pokemonInfo={pokemonInfo} />
+			<PokemonContainer pokemonInfo={pokemonInfo} pokeName={pokeName} />
 
 			<Footer />
 		</Container>
