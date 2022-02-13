@@ -1,13 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { IoChevronBackCircle, IoChevronForwardCircle } from 'react-icons/io5'
+
 import { pokeNumberDisplay } from '../../../helpers/productsHelper'
-import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const AdjacentPokeButtons = ({ adjacentPokemons }) => {
 	const { previous, next } = adjacentPokemons
 	const navigate = useNavigate()
-	const location = useLocation()
 
 	const [ mockNumber, mockName ] = [6, 'charizard']
 

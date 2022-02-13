@@ -19,7 +19,7 @@ const Home = () => {
 	const getPokemonsList = () => {
 		api.getPokemons()
 			.then(({ data }) => setPokemonsList(data))
-			.catch(({ error }) => errorModal(error))
+			.catch(({ response: { data }}) => errorModal(data))
 	}
 	
 	useEffect(getPokemonsList, [])

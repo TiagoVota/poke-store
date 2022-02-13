@@ -20,7 +20,7 @@ const ProductPage = () => {
 	const getPokemonsList = () => {
 		api.getPokemon({ pokeName })
 			.then(({ data }) => setPokeInfo(data))
-			.catch(({ error }) => errorModal(error))
+			.catch(({ response: { data }}) => errorModal(data))
 	}
 	
 	useEffect(getPokemonsList, [location])
