@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
 	button {
 		color: #FFFFFF;
-		background-color: #30A7D7;
+		background-color: #313131;
 		opacity: ${p => p.isDisable ? 0.7 : 1};
 
 		cursor: ${p => p.isDisable ? 'none' : 'pointer'};
@@ -48,6 +48,17 @@ const GlobalStyle = createGlobalStyle`
 
 		:focus {
 			color: #30A7D7;
+			outline: none;
+		}
+	}
+
+	select {
+		font-family: 'Exo 2', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		color: #313131;
+
+		:focus {
 			outline: none;
 		}
 	}

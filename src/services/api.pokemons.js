@@ -12,20 +12,20 @@ const getPokemons = () => {
 }
 
 
-const getPokemon = ({ pokemonId }) => {
-	return axios.get(`${PRODUCTS_URL}/${pokemonId}`)
+const getPokemon = ({ pokeName, pokeId }) => {
+	return axios.get(`${PRODUCTS_URL}/${pokeName || pokeId}`)
 }
 
 
-const postPokemonToCart = ({ token, pokemonId, quantity }) => {
+const addPokemonToCart = ({ token, pokeId, quantity }) => {
 	const body = { quantity }
 
-	return axios.post(`${PRODUCTS_URL}/${pokemonId}`, body, makeConfig(token))
+	return axios.put(`${PRODUCTS_URL}/${pokeId}`, body, makeConfig(token))
 }
 
 
 export {
 	getPokemons,
 	getPokemon,
-	postPokemonToCart,
+	addPokemonToCart,
 }

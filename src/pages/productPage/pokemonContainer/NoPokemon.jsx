@@ -1,19 +1,22 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 
-const NoPokemons = () => {
+const NoPokemon = ({ pokeName }) => {
 	const suggestions = [
-		'Reduce the number of search parameters',
-		'Search for only one Pokémon type at a time',
+		'Check your pokémon\'s name',
+		'Be careful with extras \'spaces\'',
 		'Refresh the page',
 	]
 
 
 	return (
 		<Container>
-			<Title>No Pokémon matched your search!</Title>
+			<Title>{`No pokémon match with '${pokeName}' search!`}</Title>
 
-			<p>Try these suggestions to find a Pokémon:</p>
+			<p>
+				<StyledLink to='/'>Go to homepage</StyledLink> and try these suggestions to find a Pokémon:
+			</p>
 
 			<SuggestionsList>
 				{suggestions.map((item, idx) => <li key={idx}>{item}</li>)}
@@ -23,13 +26,13 @@ const NoPokemons = () => {
 }
 
 
-export default NoPokemons
+export default NoPokemon
 
 
 const Container = styled.div`
 	width: 100vw;
-	margin: 50px 0 100px;
-	padding: 20px 5px 50px 20px;
+	margin: 50px 0 125px;
+	padding: 20px 15px 50px 20px;
 
 	color: #919191;
 
@@ -37,7 +40,9 @@ const Container = styled.div`
 	border-radius: 10px;
 
 	> p {
-		margin: 35px 0 15px 0;
+		margin: 5px 0 15px 0;
+		
+		line-height: 20px;
 		font-weight: bold;
 	}
 `
@@ -50,6 +55,12 @@ const Title = styled.h2`
 	line-height: 25px;
 	color: #E3350D;
 `
+
+const StyledLink = styled(Link)`
+	color: #313131;
+	text-decoration: underline;
+`
+
 
 const SuggestionsList = styled.ul`
 	> li {

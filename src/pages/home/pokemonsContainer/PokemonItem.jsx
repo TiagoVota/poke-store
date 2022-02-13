@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { moneyDisplay } from '../../../helpers/productsHelper'
+import { moneyDisplay, pokeNumberDisplay } from '../../../helpers/productsHelper'
 
-import TypeButton from './TypeButton'
+import TypeButton from '../../shared/pokemons/TypeButton'
+import { PokeImg } from '../../../components/PokeImg'
 
 
 const PokemonItem = ({ pokeInfo }) => {
@@ -18,9 +19,8 @@ const PokemonItem = ({ pokeInfo }) => {
 			<PokeImg src={image} alt={`${pokemon} image`} />
 
 			<DescriptionBox>
-				<NumberSpan>{`#${number}`}</NumberSpan>
+				<NumberSpan>{pokeNumberDisplay(number)}</NumberSpan>
 				<NameSpan>{pokemon}</NameSpan>
-				
 
 				<TypesWrapper>
 					{types.map((type, index) => <TypeButton key={index} type={type} />)}
@@ -44,15 +44,6 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: start;
 	align-items: start;
-`
-
-
-const PokeImg = styled.img`
-	width: 86vw;
-	height: 86vw;
-
-	border-radius: 10px;
-	background-color: #F2F2F2;
 `
 
 const DescriptionBox = styled.div`
