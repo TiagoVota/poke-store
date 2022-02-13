@@ -14,13 +14,13 @@ const handleValidation = (object, objectSchema) => {
 
 const improveErrorText = (errorStr) => {
 	const strReplaces = [
-		['[ref:password]', 'igual a "Senha"'],
-		['name', 'Nome'],
+		['[ref:password]', 'equal to "Password"'],
+		['username', 'Name'],
 		['email', 'E-mail'],
-		['password', 'Senha'],
-		['repeatPassword', 'Confirmação da senha'],
-		['value', 'Valor'],
-		['description', 'Descrição'],
+		['password', 'Password'],
+		['repeatPassword', 'Confirm password'],
+		['value', 'Value'],
+		['description', 'Description'],
 	]
 
 	return strReplaces.reduce((acc, rep) => acc.replace(rep[0], rep[1]), errorStr)

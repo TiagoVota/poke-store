@@ -14,8 +14,8 @@ const postLogin = ({ email, password }) => {
 }
 
 
-const postSignUp = ({ name, email, password, repeatPassword }) => {
-	const body = { name, email, password, repeatPassword }
+const postSignUp = ({ name, email, password, image }) => {
+	const body = { name, email, password, image }
 
 	return axios.post(`${AUTH_URL}/sign-up`, body)
 }
