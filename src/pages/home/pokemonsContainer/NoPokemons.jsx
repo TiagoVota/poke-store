@@ -11,7 +11,7 @@ const NoPokemons = () => {
 
 	return (
 		<Container>
-			<Title>No Pokémon Matched Your Search!</Title>
+			<Title>No Pokémon matched your search!</Title>
 
 			<p>Try these suggestions to find a Pokémon:</p>
 

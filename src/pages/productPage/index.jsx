@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
 import { errorModal } from '../../factories/modalFactory'
 
@@ -13,23 +13,23 @@ import * as api from '../../services/api.pokemons'
 
 
 const ProductPage = () => {
-	const [pokemonInfo, setPokemonInfo] = useState([])
+	const [pokeInfo, setPokeInfo] = useState([])
 	const { pokeName } = useParams()
+	const location = useLocation()
 
 	const getPokemonsList = () => {
 		api.getPokemon({ pokeName })
-			.then(({ data }) => setPokemonInfo(data))
+			.then(({ data }) => setPokeInfo(data))
 			.catch(({ error }) => errorModal(error))
 	}
 	
-	useEffect(getPokemonsList, [])
+	useEffect(getPokemonsList, [location])
 
-	console.log({ pokeName, pokemonInfo })
 	return (
 		<Container>
 			<Header title={pageTitles['product']} />
 
-			<PokemonContainer pokemonInfo={pokemonInfo} pokeName={pokeName} />
+			<PokemonContainer pokeInfo={pokeInfo} pokeName={pokeName} />
 
 			<Footer />
 		</Container>

@@ -8,11 +8,12 @@ const Header = ({ title }) => {
 	const navigate = useNavigate()
 
 	const goToHome = () => navigate('/')
+	
 	return (
-		<Container onClick={goToHome}>
+		<Container>
 			<Navbar />
 
-			<TitleContainer>
+			<TitleContainer onClick={goToHome}>
 				<Title>{title}</Title>
 			</TitleContainer>
 		</Container>
