@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 import useAuth from '../../../hooks/useAuth'
@@ -9,9 +10,10 @@ import { errorModal, successModal } from '../../../factories/modalFactory'
 
 
 const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
-	const { auth: { token='token' } } = useAuth()
+	const { auth: { token } } = useAuth()
 	const { updateCart } = useCart()
 	const [pokeQuant, setPokeQuant] = useState('1')
+	const navigate = useNavigate()
 
 	const [ MIN_ITENS, MAX_ITENS ] = [1, 12]
 	const listQuantItens = makeNumbersList(MIN_ITENS, MAX_ITENS)
@@ -22,11 +24,14 @@ const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
 		event.preventDefault()
 
 		api.addPokemonToCart({ token, pokeId, quantity: Number(pokeQuant) })
-			.then(({ data }) => {
-				updateCart(data)
+			.then(({ data: { products } }) => {
+				updateCart(products)
 				successModal(`Cart successfully updated with ${pokeQuant} ${pokemon}!`)
 			})
-			.catch(({ response: { data }}) => errorModal(data))
+			.catch(({ response: { status, data }}) => {
+				errorModal(data)
+				if (status === 401) navigate('/login')
+			})
 	}
 
 	return (
