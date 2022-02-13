@@ -44,6 +44,10 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: start;
 	align-items: start;
+
+	@media (min-width: 900px) {
+		width: 300px;
+	}
 `
 
 const DescriptionBox = styled.div`
