@@ -27,7 +27,7 @@ const Login = () => {
 
 	const handleSubmit = async(e) => {
 		e.preventDefault()
-
+		
 		const validation = handleValidation(formData, loginSchema)
 		if(!validation.isValid){
 			return setFormNotice(validation.error)
@@ -46,7 +46,7 @@ const Login = () => {
 				return setFormNotice('Wrong password. Did you forget it?')
 			}
 			if(error.response.status == 422){
-				return alert('You shouldnt tamper with the website code like that ;)')
+				return alert('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
 		}
@@ -55,18 +55,18 @@ const Login = () => {
 
 	return (
 		<Container>
-			<Background onSubmit={(e) => handleSubmit(e)}>
+			<Background onSubmit={handleSubmit}>
 				<PokestoreLogo src={pokestorelogo}/>
 
-				<Label>email</Label>
-				<Input name="email" type="email" onChange={(e) => handleChange(e)} value={formData.email}/>
+				<Label>E-mail</Label>
+				<Input name="email" type="email" onChange={handleChange} value={formData.email}/>
 
 				<Label>Password</Label>
-				<Input name="password" type="password" onChange={(e) => handleChange(e)} value={formData.password}/>
+				<Input name="password" type="password" onChange={handleChange} value={formData.password}/>
 				<Label>{formNotice}</Label>
 
 				<Button type="submit">Log me in!</Button>
-				<Link to="/sign-up"><Label>New here? Signup!</Label></Link>
+				<Link to="/sign-up"><Label>New here? Sign up!</Label></Link>
 
 			</Background>
 		</Container>

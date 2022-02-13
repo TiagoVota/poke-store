@@ -14,7 +14,7 @@ const SignUp = () => {
 	const navigation = useNavigate()
 
 	const [formData, setFormData] = useState({
-		name: '',
+		username: '',
 		email: '',
 		password: '',
 		repeatPassword: '',
@@ -29,7 +29,7 @@ const SignUp = () => {
 
 	const handleSubmit = async(e) => {
 		e.preventDefault()
-
+		
 		const validation = handleValidation(formData, signUpSchema)
 		if(!validation.isValid){
 			return setFormNotice(validation.error)
@@ -47,7 +47,7 @@ const SignUp = () => {
 				return setFormNotice('This user already exists! Forgot your password?')
 			}
 			if(error.response.status == 422){
-				return alert('You shouldnt tamper with the website code like that ;)')
+				return alert('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
 		}
@@ -55,23 +55,23 @@ const SignUp = () => {
 
 	return (
 		<Container>
-			<Background onSubmit={(e) => handleSubmit(e)}>
+			<Background onSubmit={handleSubmit}>
 				<PokestoreLogo src={pokestorelogo}/>
 
 				<Label>Name</Label>
-				<Input name="name" onChange={(e) => handleChange(e)} value={formData.name}/>
+				<Input name="username" onChange={handleChange} value={formData.username}/>
 
 				<Label>Profile picture URL</Label>
-				<Input name="image" onChange={(e) => handleChange(e)} value={formData.image}/>
+				<Input name="image" onChange={handleChange} value={formData.image}/>
 
-				<Label>E-Mail</Label>
-				<Input name="email" type="email" onChange={(e) => handleChange(e)} value={formData.email}/>
+				<Label>E-mail</Label>
+				<Input name="email" type="email" onChange={handleChange} value={formData.email}/>
 
 				<Label>Password</Label>
-				<Input name="password" type="password" onChange={(e) => handleChange(e)} value={formData.password}/>
+				<Input name="password" type="password" onChange={handleChange} value={formData.password}/>
 
 				<Label>Confirm password</Label>
-				<Input name="repeatPassword" type="password" onChange={(e) => handleChange(e)} value={formData.repeatPassword}/>
+				<Input name="repeatPassword" type="password" onChange={handleChange} value={formData.repeatPassword}/>
 				<Label>{formNotice}</Label>
 				
 				<Button type="submit">Sign me up!</Button>
