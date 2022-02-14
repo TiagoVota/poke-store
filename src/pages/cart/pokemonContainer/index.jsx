@@ -16,8 +16,6 @@ const PokemonContainer = ({ haveCart }) => {
 	const { auth: { token } } = useAuth()
 	const navigate = useNavigate()
 
-	console.log({ products, haveCart })
-
 	if (products.length === 0) return <NoPokemon />
 
 	const cartInfo = haveCart.map((apiInfo, index) => {
