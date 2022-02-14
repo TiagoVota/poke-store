@@ -11,7 +11,7 @@ const Header = ({ title }) => {
 	
 	return (
 		<Container>
-			<Navbar />
+			<Navbar/>
 
 			<TitleContainer onClick={goToHome}>
 				<Title>{title}</Title>

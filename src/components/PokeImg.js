@@ -7,6 +7,11 @@ const PokeImg = styled.img`
 
 	border-radius: 10px;
 	background-color: #F2F2F2;
+
+	@media (min-width: 900px) {
+		width: 286px;
+		height: 286px;
+	}
 `
 
 

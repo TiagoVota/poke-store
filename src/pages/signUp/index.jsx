@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
 import { postSignUp } from '../../services/api.auth'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router'
 import { handleValidation } from '../../validations/handleValidation'
 import { signUpSchema } from '../../schemas/userSchema.js'
+import { errorModal, successModal } from '../../factories/modalFactory'
+
 import Container from '../../components/Container'
 import {Background, PokestoreLogo, Label, Input, Button} from '../../components/Forms'
 import pokestorelogo from '../../assets/img/poke-store-logo.png'
@@ -100,7 +102,7 @@ const SignUp = () => {
 				image: true
 			})
 			await postSignUp(user)
-			alert('Account successfully created!')
+			successModal('Account successfully created!')
 			navigation('/login')
 		} catch (error) {
 			if(error.response.status === 409){
@@ -111,7 +113,8 @@ const SignUp = () => {
 				setValidity({...validity, email: true})
 			}
 			if(error.response.status == 422){
-				return alert('You shouldn\'t tamper with the website code like that ;)')
+				console.log({ error })
+				return errorModal('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
 			setValidity({

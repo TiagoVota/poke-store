@@ -15,7 +15,6 @@ const Footer = () => {
 				<PageItem onClick={() => navigate('/sign-up')}>Sign up</PageItem>
 				<PageItem onClick={() => navigate('/')}>Pokemons</PageItem>
 				<PageItem onClick={() => navigate('/cart')}>Cart</PageItem>
-				<PageItem onClick={() => navigate('/checkout')}>Checkout</PageItem>
 			</PageList>
 		</Container>
 	)

@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-import { makeConfig } from '../helpers/configHelper'
-
 import BASE_URL from './baseUrl'
 
 
@@ -14,8 +12,8 @@ const postLogin = ({ email, password }) => {
 }
 
 
-const postSignUp = ({ name, email, password, image }) => {
-	const body = { name, email, password, image }
+const postSignUp = ({ username, email, password, image }) => {
+	const body = { username, email, password, image }
 
 	return axios.post(`${AUTH_URL}/sign-up`, body)
 }

@@ -8,7 +8,7 @@ import { PokeImg } from '../../../components/PokeImg'
 
 
 const PokemonItem = ({ pokeInfo }) => {
-	const { number, pokemon, image, price, types } = pokeInfo
+	const { number, pokemon, image, price, types, quantity } = pokeInfo
 	const navigate = useNavigate()
 	
 	const handlePokeClick = () => navigate(`/products/${pokemon.toLowerCase()}`)
@@ -27,6 +27,9 @@ const PokemonItem = ({ pokeInfo }) => {
 				</TypesWrapper>
 
 				<PriceSpan>{moneyDisplay(price)}</PriceSpan>
+				<QuantitySpan>{`Quantity: ${quantity}`}</QuantitySpan>
+				<QuantitySpan>{`Subtotal: ${moneyDisplay(quantity * price)}`}</QuantitySpan>
+
 			</DescriptionBox>
 		</Container>
 	)
@@ -44,9 +47,11 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: start;
 	align-items: start;
-
+	
 	@media (min-width: 900px) {
-		width: 300px;
+		width: 500px;
+		justify-content: center;
+		align-items: center;
 	}
 `
 
@@ -80,8 +85,16 @@ const NameSpan = styled.span`
 `
 
 const PriceSpan = styled.span`
-	margin: 10px 0;
+	margin-top: 10px;
+	margin-bottom: 5px;
 
+	font-size: 22px;
+	line-height: 27px;
+	font-weight: bold;
+`
+
+const QuantitySpan = styled.span`
+	margin-bottom: 5px;
 	font-size: 22px;
 	line-height: 27px;
 	font-weight: bold;
