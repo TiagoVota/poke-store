@@ -27,6 +27,8 @@ const Input = styled.input`
     height: 52px;
     border: none;
     border-radius: 5px;
+    border-color: ${props => props.validity ? '#000' : '#EC362D'};
+    border-style: solid;
     padding-left: 15px;
     font-size: 20px;
 `
