@@ -25,7 +25,7 @@ const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
 		const token = auth.token
 		api.addPokemonToCart({ token, pokeId, quantity: Number(pokeQuant) })
 			.then(({ data: { products } }) => {
-				updateCart(products)
+				updateCart({ products })
 				successModal(`Cart successfully updated with ${pokeQuant} ${pokemon}!`)
 			})
 			.catch(({ response: { status, data }}) => {

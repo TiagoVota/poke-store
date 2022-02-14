@@ -8,6 +8,7 @@ import {Background, PokestoreLogo, Label, Input, Button} from '../../components/
 import pokestorelogo from '../../assets/img/poke-store-logo.png'
 import { loginSchema } from '../../schemas/userSchema'
 import { handleValidation } from '../../validations/handleValidation'
+import { errorModal } from '../../factories/modalFactory'
 
 const Login = () => {
 
@@ -35,18 +36,19 @@ const Login = () => {
 	
 		try {
 			const userSpecs = await postLogin(formData)
+			console.log({ userSpecs: userSpecs.data })
 			login(userSpecs.data)
 			navigation('/')
 		} catch (error) {
 			console.log(error)
 			if(error.response.status === 404){
-				return setFormNotice('This user doesnt exist.')
+				return setFormNotice('This user doesn\'t exist.')
 			}
 			if(error.response.status === 401){
 				return setFormNotice('Wrong password. Did you forget it?')
 			}
 			if(error.response.status == 422){
-				return alert('You shouldn\'t tamper with the website code like that ;)')
+				return errorModal('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
 		}

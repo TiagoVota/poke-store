@@ -32,4 +32,10 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
+
+	@media (min-width: 900px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 `

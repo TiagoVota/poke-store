@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
-import { errorModal } from '../../factories/modalFactory'
 import useCart from '../../hooks/useCart'
 import useAuth from '../../hooks/useAuth'
-import * as api from '../../services/api.pokemons'
-import Container from '../../components/Container'
+import Container from '../../components/ContainerHome'
 
 
 import axios from 'axios'
@@ -23,8 +21,9 @@ const Cart = () => {
 	
 	useEffect(() => {
 		let arrayOfIds = []
-		for(let i = 0; i < cart.length; i++){
-			arrayOfIds.push(cart[i].product_id)
+		const { products } = cart
+		for(let i = 0; i < products.length; i++){
+			arrayOfIds.push(products[i].product_id)
 		}
 		const promise = axios.get(`${BASE_URL}/cart`, makeConfig(auth.token))
 		promise.then((res) => setCartItems(res.data), (e) => setCartItems(e.response.status))
@@ -33,7 +32,9 @@ const Cart = () => {
 	return (
 		<Container>
 			<Header title={pageTitles['cart']}/>
+
 			<PokemonContainer haveCart={cartItems}/>
+			
 			<Footer/>
 		</Container>
 	)

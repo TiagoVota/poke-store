@@ -1,5 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { IoReorderThree } from 'react-icons/io5'
+import { IoCart } from 'react-icons/io5'
 
 import useAuth from '../../../hooks/useAuth'
 
@@ -7,15 +8,20 @@ import signUpImg from '../../../assets/profile-nav-signup.png'
 
 
 function Navbar() {
-	const { image } = useAuth()
+	const { auth: { image } } = useAuth()
+	const navigate = useNavigate()
+
+	const goCart = () => navigate('/cart')
+	const goLogin = () => navigate('/login')
+
 
 	return (
 		<Container>
-			<NavButton>
-				<IoReorderThree size='45px' />
+			<NavButton onClick={goCart}>
+				<IoCart size='45px' />
 			</NavButton>
 
-			<ProfileButton>
+			<ProfileButton onClick={goLogin}>
 				<img src={image || signUpImg} alt='Profile image' />
 
 				{ Boolean(image) ? '' : 'Log in' }
@@ -64,6 +70,7 @@ const ProfileButton = styled.button`
 
 	> img {
 		width: 45px;
+		height: 45px;
 
 		border-radius: 50%;
 	}
