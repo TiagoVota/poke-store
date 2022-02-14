@@ -1,18 +1,18 @@
 import styled from 'styled-components'
-import { IoReorderThree } from 'react-icons/io5'
+import { IoCart } from 'react-icons/io5'
 
 import useAuth from '../../../hooks/useAuth'
 
 import signUpImg from '../../../assets/profile-nav-signup.png'
 
 
-function Navbar() {
+function Navbar({ onClick: handleClick }) {
 	const { image } = useAuth()
 
 	return (
-		<Container>
+		<Container onClick={handleClick}>
 			<NavButton>
-				<IoReorderThree size='45px' />
+				<IoCart size='45px' />
 			</NavButton>
 
 			<ProfileButton>
