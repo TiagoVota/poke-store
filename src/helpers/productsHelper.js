@@ -16,7 +16,6 @@ const makeNumbersList = (firstNumber, lastNumber) => {
 	return listNumbers
 }
 
-
 export {
 	moneyDisplay,
 	pokeNumberDisplay,
