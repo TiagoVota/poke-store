@@ -17,7 +17,7 @@ import PokemonContainer from './pokemonContainer'
 
 const Cart = () => {
 	const { cart } = useCart()
-	const { token } = useAuth()
+	const { auth } = useAuth()
 	
 	const [cartItems, setCartItems] = useState([])
 	
@@ -26,8 +26,8 @@ const Cart = () => {
 		for(let i = 0; i < cart.length; i++){
 			arrayOfIds.push(cart[i].product_id)
 		}
-		const promise = axios.get(`${BASE_URL}/cart`, makeConfig(token))
-		promise.then((res) => {setCartItems(res.data); console.log(res.data)}, (e) => console.log(e))
+		const promise = axios.get(`${BASE_URL}/cart`, makeConfig(auth.token))
+		promise.then((res) => setCartItems(res.data), (e) => setCartItems(e.response.status))
 	}, [])
 
 	return (

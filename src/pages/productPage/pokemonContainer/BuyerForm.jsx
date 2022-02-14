@@ -10,7 +10,7 @@ import { errorModal, successModal } from '../../../factories/modalFactory'
 
 
 const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
-	const { token } = useAuth()
+	const { auth } = useAuth()
 	const { updateCart } = useCart()
 	const [pokeQuant, setPokeQuant] = useState('1')
 	const navigate = useNavigate()
@@ -22,7 +22,7 @@ const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
 
 	const handleAddCart = (event) => {
 		event.preventDefault()
-
+		const token = auth.token
 		api.addPokemonToCart({ token, pokeId, quantity: Number(pokeQuant) })
 			.then(({ data: { products } }) => {
 				updateCart(products)
