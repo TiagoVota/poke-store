@@ -71,19 +71,26 @@ Seguir os passos descritos na seção de [isntalação da nossa API](https://git
 
 ### Instalando o app
 ```bash
+
 # Clone este repositório
 $ git clone https://github.com/TiagoVota/poke-store
+
 # Acesse a pasta do projeto no terminal/cmd
 $ cd poke-store
+
 # Instale as dependências
 $ npm install
+
 ```
 
 ### Inicializando o app
 ```bash
+
 # Execute a aplicação
 $ npm start
+
 # O servidor inciará na porta:3000 (escolhida por padrão) - acesse http://localhost:3000 
+
 ```
 
 <br/>
