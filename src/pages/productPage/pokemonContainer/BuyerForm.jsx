@@ -10,7 +10,7 @@ import { errorModal, successModal } from '../../../factories/modalFactory'
 
 
 const BuyerForm = ({ pokeInfo: { _id: pokeId, pokemon, price }}) => {
-	const { auth: { token } } = useAuth()
+	const { token } = useAuth()
 	const { updateCart } = useCart()
 	const [pokeQuant, setPokeQuant] = useState('1')
 	const navigate = useNavigate()
