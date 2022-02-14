@@ -50,7 +50,6 @@ const SignUp = () => {
 		
 		const validation = handleValidation(formData, signUpSchema)
 		if(!validation.isValid){
-			console.log(validation.error)
 			if(validation.error.includes('Name')){
 				setValidity({...validity, username: false})
 				refs.usernameRef.current.focus()
@@ -113,7 +112,6 @@ const SignUp = () => {
 				setValidity({...validity, email: true})
 			}
 			if(error.response.status == 422){
-				console.log({ error })
 				return errorModal('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')

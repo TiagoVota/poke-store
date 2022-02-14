@@ -58,11 +58,9 @@ const Login = () => {
 	
 		try {
 			const userSpecs = await postLogin(formData)
-			console.log({ userSpecs: userSpecs.data })
 			login(userSpecs.data)
 			navigation('/')
 		} catch (error) {
-			console.log(error)
 			if(error.response.status === 404){
 				setValidity({...validity, email: false})
 				refs.emailRef.current.focus()
