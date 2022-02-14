@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { postSignUp } from '../../services/api.auth'
@@ -12,6 +12,22 @@ import pokestorelogo from '../../assets/img/poke-store-logo.png'
 
 
 const SignUp = () => {
+
+	const [refs] = useState({
+		usernameRef: useRef(),
+		emailRef: useRef(),
+		passwordRef: useRef(),
+		repeatPasswordRef: useRef(),
+		imageRef: useRef()
+	})
+
+	const [validity, setValidity] = useState({
+		username: true,
+		email: true,
+		password: true,
+		repeatPassword: true,
+		image: true
+	})
 
 	const navigation = useNavigate()
 
@@ -34,6 +50,43 @@ const SignUp = () => {
 		
 		const validation = handleValidation(formData, signUpSchema)
 		if(!validation.isValid){
+			console.log(validation.error)
+			if(validation.error.includes('Name')){
+				setValidity({...validity, username: false})
+				refs.usernameRef.current.focus()
+				return setFormNotice(validation.error)
+			}else{
+				setValidity({...validity, username: true})
+			}
+			if(validation.error.includes('mail')){
+				setValidity({...validity, email: false})
+				refs.emailRef.current.focus()
+				return setFormNotice(validation.error)
+			}else{
+				setValidity({...validity, email: true})
+			}
+			if(validation.error.includes('Password') && !validation.error.includes('Confirm')){
+				setValidity({...validity, password: false, repeatPassword: false})
+				refs.passwordRef.current.focus()
+				return setFormNotice(validation.error)
+			}else{
+				setValidity({...validity, password: true, repeatPassword: true})
+			}
+			if(validation.error.includes('Confirm password')){
+				setValidity({...validity, repeatPassword: false})
+				refs.repeatPasswordRef.current.focus()
+				return setFormNotice(validation.error)
+			}else{
+				setValidity({...validity, repeatPassword: true})
+			}
+			if(validation.error.includes('image')){
+				setValidity({...validity, image: false})
+				refs.imageRef.current.focus()
+				return setFormNotice(validation.error)
+			}else{
+				setValidity({...validity, image: true})
+			}
+
 			return setFormNotice(validation.error)
 		}
 	
@@ -41,19 +94,36 @@ const SignUp = () => {
 		delete user.confirmPassword
 	
 		try {
-			console.log({ user })
+			setValidity({
+				username: true,
+				email: true,
+				password: true,
+				repeatPassword: true,
+				image: true
+			})
 			await postSignUp(user)
 			successModal('Account successfully created!')
 			navigation('/login')
 		} catch (error) {
 			if(error.response.status === 409){
+				setValidity({...validity, email: false})
+				refs.emailRef.current.focus()
 				return setFormNotice('This user already exists! Forgot your password?')
+			}else{
+				setValidity({...validity, email: true})
 			}
 			if(error.response.status == 422){
 				console.log({ error })
 				return errorModal('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
+			setValidity({
+				username: true,
+				email: true,
+				password: true,
+				repeatPassword: true,
+				image: true
+			})
 		}
 	}
 
@@ -63,19 +133,19 @@ const SignUp = () => {
 				<PokestoreLogo src={pokestorelogo}/>
 
 				<Label>Name</Label>
-				<Input name="username" onChange={handleChange} value={formData.username}/>
+				<Input name="username" onChange={handleChange} value={formData.username} ref={refs.usernameRef} validity={validity.username}/>
 
 				<Label>Profile picture URL</Label>
-				<Input name="image" onChange={handleChange} value={formData.image}/>
+				<Input name="image" onChange={handleChange} value={formData.image} ref={refs.imageRef} validity={validity.image}/>
 
 				<Label>E-mail</Label>
-				<Input name="email" type="email" onChange={handleChange} value={formData.email}/>
+				<Input name="email" type="email" onChange={handleChange} value={formData.email} ref={refs.emailRef} validity={validity.email}/>
 
 				<Label>Password</Label>
-				<Input name="password" type="text" onChange={handleChange} value={formData.password}/>
+				<Input name="password" type="password" onChange={handleChange} value={formData.password} ref={refs.passwordRef} validity={validity.password}/>
 
 				<Label>Confirm password</Label>
-				<Input name="repeatPassword" type="text" onChange={handleChange} value={formData.repeatPassword}/>
+				<Input name="repeatPassword" type="password" onChange={handleChange} value={formData.repeatPassword} ref={refs.repeatPasswordRef} validity={validity.repeatPassword}/>
 				<Label>{formNotice}</Label>
 				
 				<Button type="submit">Sign me up!</Button>
