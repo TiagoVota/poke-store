@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 
-const NoPokemon = ({ pokeName }) => {
+const NoPokemon = () => {
 	const suggestions = [
 		'Browse for pokémons',
 		'Click add to cart',
@@ -31,7 +31,7 @@ export default NoPokemon
 
 const Container = styled.div`
 	width: 100vw;
-	margin: 50px 0 125px;
+	margin: 50px 0 150px;
 	padding: 20px 15px 50px 20px;
 
 	color: #919191;

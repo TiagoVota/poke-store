@@ -8,11 +8,10 @@ const Header = ({ title }) => {
 	const navigate = useNavigate()
 
 	const goToHome = () => navigate('/')
-	const goLogin = () => navigate('/login')
 	
 	return (
 		<Container>
-			<Navbar onClick={goLogin}/>
+			<Navbar/>
 
 			<TitleContainer onClick={goToHome}>
 				<Title>{title}</Title>

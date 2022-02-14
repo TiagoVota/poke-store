@@ -41,6 +41,7 @@ const SignUp = () => {
 		delete user.confirmPassword
 	
 		try {
+			console.log({ user })
 			await postSignUp(user)
 			successModal('Account successfully created!')
 			navigation('/login')
@@ -49,6 +50,7 @@ const SignUp = () => {
 				return setFormNotice('This user already exists! Forgot your password?')
 			}
 			if(error.response.status == 422){
+				console.log({ error })
 				return errorModal('You shouldn\'t tamper with the website code like that ;)')
 			}
 			setFormNotice('Oh no! Something is wrong with the server! Please try again later!')
@@ -70,10 +72,10 @@ const SignUp = () => {
 				<Input name="email" type="email" onChange={handleChange} value={formData.email}/>
 
 				<Label>Password</Label>
-				<Input name="password" type="password" onChange={handleChange} value={formData.password}/>
+				<Input name="password" type="text" onChange={handleChange} value={formData.password}/>
 
 				<Label>Confirm password</Label>
-				<Input name="repeatPassword" type="password" onChange={handleChange} value={formData.repeatPassword}/>
+				<Input name="repeatPassword" type="text" onChange={handleChange} value={formData.repeatPassword}/>
 				<Label>{formNotice}</Label>
 				
 				<Button type="submit">Sign me up!</Button>
