@@ -140,10 +140,10 @@ const SignUp = () => {
 				<Input name="email" type="email" onChange={handleChange} value={formData.email} ref={refs.emailRef} validity={validity.email}/>
 
 				<Label>Password</Label>
-				<Input name="password" type="password" onChange={handleChange} value={formData.password} ref={refs.passwordRef} validity={validity.password}/>
+				<Input name="password" type="text" onChange={handleChange} value={formData.password} ref={refs.passwordRef} validity={validity.password}/>
 
 				<Label>Confirm password</Label>
-				<Input name="repeatPassword" type="password" onChange={handleChange} value={formData.repeatPassword} ref={refs.repeatPasswordRef} validity={validity.repeatPassword}/>
+				<Input name="repeatPassword" type="text" onChange={handleChange} value={formData.repeatPassword} ref={refs.repeatPasswordRef} validity={validity.repeatPassword}/>
 				<Label>{formNotice}</Label>
 				
 				<Button type="submit">Sign me up!</Button>
