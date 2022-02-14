@@ -23,9 +23,14 @@ const addPokemonToCart = ({ token, pokeId, quantity }) => {
 	return axios.put(`${PRODUCTS_URL}/${pokeId}`, body, makeConfig(token))
 }
 
+const getFullCart = ({ token, arrayOfIds }) => {
+	return axios.post(`${BASE_URL}/cart`, arrayOfIds, makeConfig(token))
+}
+
 
 export {
 	getPokemons,
 	getPokemon,
 	addPokemonToCart,
+	getFullCart,
 }

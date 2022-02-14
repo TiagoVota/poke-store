@@ -7,7 +7,7 @@ import signUpImg from '../../../assets/profile-nav-signup.png'
 
 
 function Navbar() {
-	const { auth: { image } } = useAuth()
+	const { image } = useAuth()
 
 	return (
 		<Container>

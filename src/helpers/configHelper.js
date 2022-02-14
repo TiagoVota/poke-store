@@ -4,7 +4,7 @@ const makeConfig = (token) => {
 			Authorization: `Bearer ${token}`
 		}
 	}
-
+	
 	return config
 }
 

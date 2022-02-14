@@ -34,8 +34,8 @@ const Login = () => {
 		}
 	
 		try {
-			const token = await postLogin(formData)
-			login(token.data)
+			const userSpecs = await postLogin(formData)
+			login(userSpecs.data)
 			navigation('/')
 		} catch (error) {
 			console.log(error)
