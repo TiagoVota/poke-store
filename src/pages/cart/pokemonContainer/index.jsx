@@ -16,7 +16,7 @@ const PokemonContainer = ({ haveCart }) => {
 	const { auth: { token } } = useAuth()
 	const navigate = useNavigate()
 
-	if (products.length === 0) return <NoPokemon />
+	if (products.length === 0 || haveCart === 404) return <NoPokemon />
 
 	const cartInfo = haveCart.map((apiInfo, index) => {
 		return {
