@@ -131,24 +131,56 @@ const SignUp = () => {
 				<PokestoreLogo src={pokestorelogo}/>
 
 				<Label>Name</Label>
-				<Input name="username" onChange={handleChange} value={formData.username} ref={refs.usernameRef} validity={validity.username}/>
+				<Input
+					name="username"
+					onChange={handleChange}
+					value={formData.username}
+					ref={refs.usernameRef}
+					validity={validity.username}
+				/>
 
 				<Label>Profile picture URL</Label>
-				<Input name="image" onChange={handleChange} value={formData.image} ref={refs.imageRef} validity={validity.image}/>
+				<Input
+					name="image"
+					onChange={handleChange}
+					value={formData.image}
+					ref={refs.imageRef}
+					validity={validity.image}
+				/>
 
 				<Label>E-mail</Label>
-				<Input name="email" type="email" onChange={handleChange} value={formData.email} ref={refs.emailRef} validity={validity.email}/>
+				<Input
+					name="email"
+					type="email"
+					onChange={handleChange}
+					value={formData.email}
+					ref={refs.emailRef}
+					validity={validity.email}
+				/>
 
 				<Label>Password</Label>
-				<Input name="password" type="password" onChange={handleChange} value={formData.password} ref={refs.passwordRef} validity={validity.password}/>
+				<Input
+					name="password"
+					type="text"
+					onChange={handleChange}
+					value={formData.password}
+					ref={refs.passwordRef}
+					validity={validity.password}
+				/>
 
 				<Label>Confirm password</Label>
-				<Input name="repeatPassword" type="password" onChange={handleChange} value={formData.repeatPassword} ref={refs.repeatPasswordRef} validity={validity.repeatPassword}/>
+				<Input
+					name="repeatPassword"
+					type="text"
+					onChange={handleChange}
+					value={formData.repeatPassword}
+					ref={refs.repeatPasswordRef}
+					validity={validity.repeatPassword}
+				/>
 				<Label>{formNotice}</Label>
 				
 				<Button type="submit">Sign me up!</Button>
 				<Link to="/login"><Label>Already have an account? Login!</Label></Link>
-				
 				
 			</Background>
 		</Container>

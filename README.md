@@ -1,6 +1,6 @@
 # 🐉 Poke Store
 ## 🚀 Descrição do Projeto
-Quem não lembra dos bons e velhos tempos jogando ou assistindo Poikémon, não é mesmo? Então que tal matar essa saudade com a Poke Store?!?! Com ela você poderá comprar seus Pokémons prediletos para ter como companhia!!!
+Quem não lembra dos bons e velhos tempos jogando ou assistindo Pokémon, não é mesmo? Então que tal matar essa saudade com a Poke Store?! Com ela você poderá comprar seus Pokémons prediletos para ter como companhia!!!
 
 <p align="center">
 	<img alt='Poke Store usage GIF' src="/public/assets/poke-store-usage.gif" />
@@ -15,7 +15,7 @@ Corra para checar o site agora mesmo: https://poke-store-tvc.vercel.app/
 Na Poke Store você será capaz de selecionar seus Pokémons prediletos para te fazer companhia. Basta selecionar o amiguinho, adicionar ao carrinho a quantidade desejada e finalizar sua compra! Fácil, não é mesmo? Nesse e-commerce, podemos encontrar as seguintes funcionalidades:
 
 ### Features
-- [x] Se cadastrar ao nosso app
+- [x] Cadastrar-se ao nosso app
 - [x] Fazer seu login
 - [x] Ver nossa lista de pokémons 
 - [x] Ver as informações de um pokémon em sua página
@@ -34,7 +34,7 @@ Na Poke Store você será capaz de selecionar seus Pokémons prediletos para te 
 		- [Features](#features)
 	- [✔️ Tabela de conteúdo](#️-tabela-de-conteúdo)
 	- [🖥 Tecnologias](#-tecnologias)
-	- [⚙ Como usar](#-como-usar)
+	- [⚙️ Como usar](#️-como-usar)
 		- [Instalando a API](#instalando-a-api)
 		- [Instalando o app](#instalando-o-app)
 		- [Inicializando o app](#inicializando-o-app)
@@ -59,7 +59,7 @@ Na Poke Store você será capaz de selecionar seus Pokémons prediletos para te 
 <br/>
 
 
-## ⚙ Como usar
+## ⚙️ Como usar
 
 Para utilizar essa API, será necessário ter nas suas máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
@@ -67,7 +67,7 @@ Além disso recomendo fortemente a utilização de um bom ter um editor de códi
 
 
 ### Instalando a API
-Seguir os passos descritos na seção de [isntalação da nossa API](https://github.com/TiagoVota/poke-store-api/blob/main/README.md).
+Seguir os passos descritos na seção de [instalação da nossa API](https://github.com/TiagoVota/poke-store-api/blob/main/README.md).
 
 ### Instalando o app
 ```bash
@@ -101,7 +101,7 @@ $ npm start
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/56308226?v=4" width="100px;" alt="Foto de perfil Tiago Vota Cucco"/>
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/78576546?v=4" width="100px;" alt="Foto de perfil Felipe Ventura"/>
 
-Feito por Tiago Vota Cucco e Felipe Ventura. Entre em contato conesco!
+Feito por Tiago Vota Cucco e Felipe Ventura. Entre em contato conosco!
 
 [![Gmail Badge](https://img.shields.io/badge/-tiagovotacucco@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:tiagovotacucco@gmail.com)](mailto:tiagovotacucco@gmail.com)
 [![Linkedin Badge](https://img.shields.io/badge/-Tiago-Vota?style=flat&logo=Linkedin&logoColor=white&color=blue&link=https://www.linkedin.com/in/tiago-vota-cucco-394916204)](https://www.linkedin.com/in/tiago-vota-cucco-394916204) 
