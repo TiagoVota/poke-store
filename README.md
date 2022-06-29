@@ -61,7 +61,7 @@ Na Poke Store você será capaz de selecionar seus Pokémons prediletos para te 
 
 ## ⚙️ Como usar
 
-Para utilizar essa API, será necessário ter nas suas máquina as seguintes ferramentas:
+Para utilizar essa API, será necessário ter na sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disso recomendo fortemente a utilização de um bom ter um editor de código, como o [VSCode](https://code.visualstudio.com/)!
 
@@ -89,7 +89,7 @@ npm install
 # Execute a aplicação
 npm start
 
-# O servidor inciará na porta:3000 (escolhida por padrão) - acesse http://localhost:3000 
+# O servidor iniciará na porta:3000 (escolhida por padrão) - acesse http://localhost:3000 
 
 ```
 
@@ -104,6 +104,6 @@ npm start
 Feito por Tiago Vota Cucco e Felipe Ventura. Entre em contato conosco!
 
 [![Gmail Badge](https://img.shields.io/badge/-tiagovotacucco@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:tiagovotacucco@gmail.com)](mailto:tiagovotacucco@gmail.com)
-[![Linkedin Badge](https://img.shields.io/badge/-Tiago-Vota?style=flat&logo=Linkedin&logoColor=white&color=blue&link=https://www.linkedin.com/in/tiago-vota-cucco-394916204)](https://www.linkedin.com/in/tiago-vota-cucco-394916204) 
+[![Linkedin Badge](https://img.shields.io/badge/-Tiago-Vota?style=flat&logo=Linkedin&logoColor=white&color=blue&link=https://www.linkedin.com/in/tiago-vota-cucco)](https://www.linkedin.com/in/tiago-vota-cucco) 
 
 <br/><br/>
